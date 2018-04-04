@@ -34,6 +34,8 @@ public class BoardManager : MonoBehaviour {
 
     void InitialiseList()
     {
+        Debug.Log("InitialiseList BoardManager !");
+
         _gridPositions.Clear();
 
         for (int x = 1; x < Columns - 1; x++)
@@ -90,6 +92,7 @@ public class BoardManager : MonoBehaviour {
 
     public void SetupScene(int level)
     {
+        Debug.Log("SetupScene BoardManager !");
         BoardSetup();
         InitialiseList();
         LayoutObjectAtRandom(WallTiles, WallCount.Minimum, WallCount.Maximum);
@@ -98,14 +101,4 @@ public class BoardManager : MonoBehaviour {
         LayoutObjectAtRandom(EnemyTiles, enemyCount, enemyCount);
         Instantiate(Exit, new Vector3(Columns - 1, Rows - 1, 0f), Quaternion.identity);
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
